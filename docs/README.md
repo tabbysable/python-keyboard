@@ -6,17 +6,17 @@ PYKB - Python Keyboard
 
 Create a hand-wired keyboard, run Python on it, turn it into production.
 
-![](img/python-inside-keyboard.png)
+![](assets/images/python-inside-keyboard.png)
 
 ## Hand-wiring a keyboard
 Follow [the guide - hand-wiring-a-keyboard.md](hand-wiring-a-keyboard.md) to rapidly make a keyboard with 100 lines of Python code.
 
-![](img/colorful-keycaps.jpg)
+![](assets/images/colorful-keycaps.jpg)
 
 ## From prototype to production <sup><kbd>in progress</kbd></sup>
 With putting more time into the Python keyboard, we find it more and more interesting. We think a Python keyboard can make a big difference, so we decide to design a new keyboard for everyone. Check out [the M60 mechanical keyboard](https://makerdiary.com/m60).
 
-[![](img/m60.jpg)](https://makerdiary.com/m60)
+[![](assets/images/m60.jpg)](https://makerdiary.com/m60)
 
 ## To be a productive keyboard
 As the 60% keyboard lacks a lot of keys (F1~F12, arrow keys and etc). We can use
@@ -29,7 +29,7 @@ Adding the Tap-key feature, which is holding a key down to activate an alternate
 
 Taping <kbd>d</kbd> outputs <kbd>d</kbd> (press & release quickly), holding <kbd>d</kbd> down activates navigation functions.
 
-![](img/d-for-navigation.png)
+![](assets/images/d-for-navigation.png)
 
 + <kbd>d</kbd> + <kbd>h</kbd> as <kbd>←</kbd>
 + <kbd>d</kbd> + <kbd>j</kbd> as <kbd>↓</kbd>
