@@ -14,7 +14,7 @@
 | RF Antennas     | 2.4GHz Cabled PCB Antenna, NFC Cabled PCB Antenna                                                       |
 | Dimensions      | 285 mm x 94.6 mm                                                                                        |
 
-![](https://github.com/makerdiary/python-keyboard/blob/master/img/hotswappable.jpg?raw=true)
+![](https://github.com/tabbysable/python-keyboard/raw/main/assets/images/hotswappable.jpg)
 
 ## Keyboard Matrix
 The pins of 8x8 keyboard matrix:
