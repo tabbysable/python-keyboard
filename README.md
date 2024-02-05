@@ -88,7 +88,9 @@ pip3 install -r python-keyboard/requirements.txt --no-deps -t "/media/${USERNAME
 ```
 * Copy `code.py` and `boot.py`, and make sure it finishes
 ```
-cp python-keyboard/{code,boot}.py "/media/${USERNAME}/CIRCUITPY/"
+cp python-keyboard/boot.py "/media/${USERNAME}/CIRCUITPY/"
+sync
+cp python-keyboard/code.py "/media/${USERNAME}/CIRCUITPY/"
 sync
 ```
 * Unplug / replug they keyboard and celebrate
