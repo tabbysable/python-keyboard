@@ -42,19 +42,21 @@ I'm new to Arduino, so I followed [the command-line update documentation](https:
 On Ubuntu, I did it like this:
 * Download [the newest UF2 .zip for m60](https://github.com/adafruit/Adafruit_nRF52_Bootloader/releases/)
 ```
-        wget "https://github.com/adafruit/Adafruit_nRF52_Bootloader/releases/download/0.8.3/m60_keyboard_bootloader-0.8.3_s140_6.1.1.zip"
+wget "https://github.com/adafruit/Adafruit_nRF52_Bootloader/releases/download/0.8.3/m60_keyboard_bootloader-0.8.3_s140_6.1.1.zip"
 ```
 * Install `adafruit-nrfutil` into a virtualenv
 ```
-        mkdir adafruit-nrfutil
-        virtualenv adafruit-nrfutil
-        ./adafruit-nrfutil/bin/pip3 install adafruit-nrfutil
+mkdir adafruit-nrfutil
+virtualenv adafruit-nrfutil
+./adafruit-nrfutil/bin/pip3 install adafruit-nrfutil
+```
 * Update UF2 firmware
-        ./adafruit-nrfutil/bin/adafruit-nrfutil --verbose dfu serial -p /dev/ttyACM0 -b 115200 --singlebank --touch 1200 --package m60_keyboard_bootloader-0.8.3_s140_6.1.1.zip
+```
+./adafruit-nrfutil/bin/adafruit-nrfutil --verbose dfu serial -p /dev/ttyACM0 -b 115200 --singlebank --touch 1200 --package m60_keyboard_bootloader-0.8.3_s140_6.1.1.zip
 ```
 * Check that it worked
 ```
-        cat "/media/${USERNAME}/M60KEYBOARD/INFO_UF2.TXT"
+cat "/media/${USERNAME}/M60KEYBOARD/INFO_UF2.TXT"
 ```
 
 ## Update CircuitPython
@@ -63,8 +65,8 @@ With UF2 updated, we can download the newest [CircuitPython for M60](https://cir
 
 For example:
 ```
-        wget "https://downloads.circuitpython.org/bin/makerdiary_m60_keyboard/en_US/adafruit-circuitpython-makerdiary_m60_keyboard-en_US-8.2.9.uf2"
-        cp adafruit-circuitpython-makerdiary_m60_keyboard-en_US-8.2.9.uf2 "/media/${USERNAME}/M60KEYBOARD/"
+wget "https://downloads.circuitpython.org/bin/makerdiary_m60_keyboard/en_US/adafruit-circuitpython-makerdiary_m60_keyboard-en_US-8.2.9.uf2"
+cp adafruit-circuitpython-makerdiary_m60_keyboard-en_US-8.2.9.uf2 "/media/${USERNAME}/M60KEYBOARD/"
 ```
 
 ## Load python-keyboard
@@ -74,20 +76,20 @@ Now, we can load modules, code.py, and boot.py onto the keyboard by copying them
 For example:
 * Download the code
 ```
-        git clone "https://github.com/tabbysable/python-keyboard.git"
+git clone "https://github.com/tabbysable/python-keyboard.git"
 ```
 * Copy `keyboard` module
 ```
-        cp -r python-keyboard/keyboard/ "/media/${USERNAME}/CIRCUITPY/lib/"
+cp -r python-keyboard/keyboard/ "/media/${USERNAME}/CIRCUITPY/lib/"
 ```
 * Install dependencies
 ```
-        pip3 install -r python-keyboard/requirements.txt --no-deps -t "/media/${USERNAME}/CIRCUITPY/lib/"
+pip3 install -r python-keyboard/requirements.txt --no-deps -t "/media/${USERNAME}/CIRCUITPY/lib/"
 ```
 * Copy `code.py` and `boot.py`, and make sure it finishes
 ```
-	cp python-keyboard/{code,boot}.py "/media/${USERNAME}/CIRCUITPY/"
-        sync
+cp python-keyboard/{code,boot}.py "/media/${USERNAME}/CIRCUITPY/"
+sync
 ```
 * Unplug / replug they keyboard and celebrate
   * You should see purple lights!
