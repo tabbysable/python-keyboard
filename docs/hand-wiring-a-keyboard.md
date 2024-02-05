@@ -1,7 +1,7 @@
 Hand-wiring a keyboard
 ======================
 
-![](img/python-inside-keyboard.png)
+![](assets/images/python-inside-keyboard.png)
 
 ## Build Hardware
 
@@ -26,29 +26,29 @@ Hand-wiring a keyboard
 
     At first, we should install stabilizers into the keyboard plate. To make the keyboard less noisy, we can lubricate the stabilizers with grease.
 
-    ![](img/grease.jpg)
+    ![](assets/images/grease.jpg)
 
 2.  Mount Switches
 
     Mount the mechanical switches to the plate.
 
-    ![](img/switch.jpg)
+    ![](assets/images/switch.jpg)
 
 3.  Solder Keyboard Matrix
 
     The keyboard matrix has 5 rows and 14 columns, each switch has two pins to connect to a row and a column. First, use a brass wire as a row and solder it with a diode. Second, solder the diode with a switch's row pin. After soldering all rows, we put something as a spacer on top of the row wires, and then solder the column wires with the column pins of these switches. By removing the spacer, the rows and columns are crossed in 3D space and are avoid to be shorted.  We'd better use a muiltmeter to check if rows and columns are shorted and each diode's direction is correct.
 
-    ![](img/rows2.jpg)
+    ![](assets/images/rows2.jpg)
 
-    ![](img/rows.jpg)
+    ![](assets/images/rows.jpg)
 
-    ![](img/rows-cols.jpg)
+    ![](assets/images/rows-cols.jpg)
 
 4.  Connect Keyboard Matrix to Pitaya Go
 
     Connect each row and each column to an IO of the board Pitaya Go. When ardware is ready now, check if rows and columns are shorted before power on.
 
-    ![](img/pitaya-go.jpg)
+    ![](assets/images/pitaya-go.jpg)
 
 ## Setup Python
 
@@ -168,4 +168,4 @@ Hand-wiring a keyboard
 
     If you have a different configuration of raws and columns, you must change `ROWS` and `COLS` in the code.
 
-![](img/colorful-keycaps.jpg)
+![](assets/images/colorful-keycaps.jpg)
