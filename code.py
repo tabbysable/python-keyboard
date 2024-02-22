@@ -4,6 +4,7 @@ from keyboard import *
 keyboard = Keyboard()
 
 ___ = TRANSPARENT
+SCL = SCROLLLOCK
 L1 = LAYER_TAP(1)
 LSFT2 = LAYER_MODS(2, MODS(LSHIFT))
 RSFT2 = LAYER_MODS(2, MODS(RSHIFT))
@@ -21,7 +22,7 @@ keyboard.keymap = (
     # layer 1
     (
         '`',  F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9, F10, F11, F12, DEL,
-        ___,RGB_MOD,RGB_VAL,___,___,___,___,___,___, ___,PRTSCN,___,___, INSERT,
+        ___,RGB_MOD,RGB_VAL,___,___,___,___,___,___, ___,PRTSCN,SCL,PAUSE,INSERT,
         ___,HUE_RGB,VAL_RGB,RGB_HUE,___,___,LEFT,DOWN, UP,RIGHT,___,___,    ___,
         RSFT2, ___, ___, ___, ___, ___, ___, ___, ___, ___, ___,         CAPS,
         RCTRL, RALT, RGUI,                 ___,      HOME, PGDN, PGUP,  END
