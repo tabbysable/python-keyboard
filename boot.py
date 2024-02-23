@@ -25,7 +25,8 @@ if col.value == pressed:
 	show_config = True
 row.value = not pressed
 
-# Hide the configuration interfaces
+# Hide the configuration interfaces and let circuitpy write
 if not show_config:
+    storage.remount("/",readonly=False)
     storage.disable_usb_drive()
     usb_cdc.disable()
