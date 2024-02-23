@@ -9,21 +9,22 @@ The M60 comes preloaded with very old firmware, and no instructions for how to g
 
 # About
 
-In this repo, you will find the configuration that I use on my own keyboard. It comes with a simple keymap and the following features:
+In this repo, you will find the configuration that I use on my own keyboard. It comes with the following keymap and special features:
 * FN key on the left, between Tab and Shift (i.e. where Caps Lock usually goes)
 * Arrow keys in the lower right, Left-Down-Up-Right
-* `CIRCUITPY` drive and serial console hidden
-  * Hold d (for "drive", natch) while plugging in the keyboard to make them available temporarily
-* Keyboard-adjustable RGB lighting
-  * FN-q to cycle through the presets
-  * FN-ws to adjust brightness
-  * FN-ad to adjust hue
-* Alternate arrows available with FN-hjkl, just like vi
 * ESC next to 1
   * tilde available with Shift-ESC
   * backtick available with FN-ESC
-* F1-F12 available using FN on the number row
-* A smattering of special keys in hopefully-obvious places
+* F1-F12 available with FN-1234567890-=
+* All tenkeyless special keys, in hopefully-obvious places
+* Alternate arrows available with FN-hjkl, just like vi
+* Keyboard-adjustable RGB lighting
+  * FN-q to cycle through the builtin modes
+  * FN-ws to adjust brightness
+  * FN-ad to adjust hue
+  * FN-TAB to save current settings
+* `CIRCUITPY` drive and serial console hidden
+  * Hold d (for "drive", natch) while plugging in the keyboard to make them available temporarily
 
 # Links
 
