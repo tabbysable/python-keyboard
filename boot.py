@@ -1,4 +1,4 @@
-import storage, usb_cdc
+import storage, usb_cdc, usb_midi
 import board, digitalio
 
 # key D is index 31, R4 C8
@@ -30,3 +30,6 @@ if not show_config:
     storage.remount("/",readonly=False)
     storage.disable_usb_drive()
     usb_cdc.disable()
+
+# Hide the USB MIDI interfaces so we're a pure HID
+usb_midi.disable()
