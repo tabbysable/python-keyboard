@@ -94,8 +94,8 @@ class Keyboard:
         self.advertisement = ProvideServicesAdvertisement(ble_hid, self.battery)
         self.advertisement.appearance = 961
         self.ble = BLERadio()
-        self.set_bt_id(self.ble_id)
         self.ble_hid = HID(ble_hid.devices)
+        self.set_bt_id(self.ble_id)
         self.usb_hid = HID(usb_hid.devices)
 
     def on_device_changed(self, name):
