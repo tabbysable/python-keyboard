@@ -9,7 +9,8 @@ def find_device(devices, usage_page, usage):
             and hasattr(device, "send_report")
         ):
             return device
-    raise ValueError("Not found")
+    return None
+    #raise ValueError("Not found")
 
 
 class HID:
@@ -74,38 +75,44 @@ class HID:
         self.keyboard.send_report(self.report)
 
     def send_consumer(self, keycode):
-        struct.pack_into("<H", self.consumer_report, 0, keycode)
-        self.consumer_control.send_report(self.consumer_report)
+	if self.consumer_control:
+            struct.pack_into("<H", self.consumer_report, 0, keycode)
+            self.consumer_control.send_report(self.consumer_report)
 
     def press_mouse(self, buttons):
-        self.mouse_report[0] |= buttons
-        self.mouse_report[1] = 0
-        self.mouse_report[2] = 0
-        self.mouse_report[3] = 0
-        self.mouse.send_report(self.mouse_report)
+        if self.mouse:
+            self.mouse_report[0] |= buttons
+            self.mouse_report[1] = 0
+            self.mouse_report[2] = 0
+            self.mouse_report[3] = 0
+            self.mouse.send_report(self.mouse_report)
 
     def release_mouse(self, buttons):
-        self.mouse_report[0] &= ~buttons
-        self.mouse_report[1] = 0
-        self.mouse_report[2] = 0
-        self.mouse_report[3] = 0
-        self.mouse.send_report(self.mouse_report)
+        if self.mouse:
+            self.mouse_report[0] &= ~buttons
+            self.mouse_report[1] = 0
+            self.mouse_report[2] = 0
+            self.mouse_report[3] = 0
+            self.mouse.send_report(self.mouse_report)
 
     def move_mouse(self, x=0, y=0, wheel=0):
-        self.mouse_report[1] = x & 0xFF
-        self.mouse_report[2] = y & 0xFF
-        self.mouse_report[3] = wheel & 0xFF
-        self.mouse.send_report(self.mouse_report)
+        if self.mouse:
+            self.mouse_report[1] = x & 0xFF
+            self.mouse_report[2] = y & 0xFF
+            self.mouse_report[3] = wheel & 0xFF
+            self.mouse.send_report(self.mouse_report)
 
     def release_all(self):
         try:
-            self.send_consumer(0)
+            if self.consumer:
+                self.send_consumer(0)
             for i in range(8):
                 self.report[i] = 0
             self.keyboard.send_report(self.report)
-            for i in range(4):
-                self.mouse_report[i] = 0
-            self.mouse.send_report(self.mouse_report)
+            if self.mouse:
+                for i in range(4):
+                    self.mouse_report[i] = 0
+                self.mouse.send_report(self.mouse_report)
         except Exception as e:
             print(e)
 
