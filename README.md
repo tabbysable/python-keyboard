@@ -25,6 +25,10 @@ In this repo, you will find the configuration that I use on my own keyboard. It 
   * FN-TAB to save current settings
 * `CIRCUITPY` drive and serial console hidden
   * Hold d (for "drive", natch) while plugging in the keyboard to make them available temporarily
+* Optional USB Boot Keyboard support
+  * This is required for old Macs, some BIOSes, and certain KVMs
+  * This is incompatible with using the Consumer Control keys (e.g. Play, Pause, Eject)
+  * To enable Boot Keyboard support, uncomment the appropriate line in boot.py
 
 # Links
 
