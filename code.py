@@ -10,6 +10,7 @@ SCL = SCROLLLOCK
 L1 = LAYER_TAP(1)
 LSFT2 = LAYER_MODS(2, MODS(LSHIFT))
 RSFT2 = LAYER_MODS(2, MODS(RSHIFT))
+LGUI2 = LAYER_MODS(2, MODS(LGUI))
 
 keyboard.keymap = (
     # layer 0
@@ -18,7 +19,7 @@ keyboard.keymap = (
         TAB,   Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P, '[', ']', '|',
         L1,    A,   S,   D,   F,   G,   H,   J,   K,   L,  ';','"',    ENTER,
         LSFT2, Z,   X,   C,   V,   B,   N,   M, ',', '.', '/',         RSFT2,
-        LCTRL, LALT, LGUI,          SPACE,            LEFT, DOWN, UP , RIGHT
+        LCTRL, LALT, LGUI2,          SPACE,            LEFT, DOWN, UP , RIGHT
     ),
 
     # layer 1
